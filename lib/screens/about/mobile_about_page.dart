@@ -17,7 +17,7 @@ class MobileAboutPage extends StatelessWidget {
     if (await canLaunchUrl(uri)) {
       await launchUrl(uri);
     } else {
-      throw "Could not laucnh";
+      throw "Could not launch";
     }
   }
 
