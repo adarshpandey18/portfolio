@@ -45,16 +45,19 @@ class _DesktopAboutPageState extends State<DesktopAboutPage> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          "ABOUT ME",
-                          style: TextStyle(
-                            color: AppColors.accentColor,
-                            fontSize: 76,
-                            fontFamily: GoogleFonts.bebasNeue().fontFamily,
+                        Flexible(
+                          flex: 1,
+                          child: Text(
+                            "ABOUT ME",
+                            style: TextStyle(
+                              color: AppColors.accentColor,
+                              fontSize: 76,
+                              fontFamily: GoogleFonts.bebasNeue().fontFamily,
+                            ),
                           ),
                         ),
-                        const SizedBox(width: 25),
-                        Expanded(
+                        Flexible(
+                          flex: 1,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -160,16 +163,19 @@ class _DesktopAboutPageState extends State<DesktopAboutPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    "MY CAPABILITES",
-                    style: TextStyle(
-                      color: AppColors.accentColor,
-                      fontSize: 76,
-                      fontFamily: GoogleFonts.bebasNeue().fontFamily,
+                  Flexible(
+                    flex: 1,
+                    child: Text(
+                      "MY CAPABILITES",
+                      style: TextStyle(
+                        color: AppColors.accentColor,
+                        fontSize: 76,
+                        fontFamily: GoogleFonts.bebasNeue().fontFamily,
+                      ),
                     ),
                   ),
-                  const SizedBox(width: 25),
-                  Expanded(
+                  Flexible(
+                    flex: 1,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -219,28 +225,26 @@ class _DesktopAboutPageState extends State<DesktopAboutPage> {
                       ),
                     ),
                   ),
-                  Container(
-                    child: Flexible(
-                      flex: 1,
-                      child: ListView.builder(
-                        shrinkWrap: true,
-                        scrollDirection: Axis.vertical,
-                        itemCount: Experience.experience.length,
-                        itemBuilder: (context, index) {
-                          var experience = Experience.experience.entries
-                              .elementAt(index)
-                              .value;
-                          return ExperienceTile(
-                            isFirst: index == 0,
-                            isLast: index == Experience.experience.length - 1,
-                            isPast: experience['isPast'],
-                            role: experience['role'],
-                            companyName: experience['companyName'],
-                            description: experience['description'],
-                            date: experience['date'],
-                          );
-                        },
-                      ),
+                  Flexible(
+                    flex: 1,
+                    child: ListView.builder(
+                      shrinkWrap: true,
+                      scrollDirection: Axis.vertical,
+                      itemCount: Experience.experience.length,
+                      itemBuilder: (context, index) {
+                        var experience = Experience.experience.entries
+                            .elementAt(index)
+                            .value;
+                        return ExperienceTile(
+                          isFirst: index == 0,
+                          isLast: index == Experience.experience.length - 1,
+                          isPast: experience['isPast'],
+                          role: experience['role'],
+                          companyName: experience['companyName'],
+                          description: experience['description'],
+                          date: experience['date'],
+                        );
+                      },
                     ),
                   ),
                 ],

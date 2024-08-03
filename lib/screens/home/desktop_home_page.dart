@@ -295,21 +295,23 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              Text(
-                                "ABOUT ME",
-                                style: TextStyle(
-                                  color: AppColors.accentColor,
-                                  fontSize: 76,
-                                  fontFamily:
-                                      GoogleFonts.bebasNeue().fontFamily,
+                              Flexible(
+                                flex: 1,
+                                child: Text(
+                                  "ABOUT ME",
+                                  style: TextStyle(
+                                    color: AppColors.accentColor,
+                                    fontSize: 76,
+                                    fontFamily:
+                                        GoogleFonts.bebasNeue().fontFamily,
+                                  ),
                                 ),
                               ),
-                              const SizedBox(
-                                width: 25,
-                              ),
-                              Expanded(
+                              Flexible(
+                                flex: 1,
                                 child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  crossAxisAlignment:
+                                      CrossAxisAlignment.start,
                                   children: [
                                     const Text(
                                       "I am a app developer based in India. Has Computer Science background.",
