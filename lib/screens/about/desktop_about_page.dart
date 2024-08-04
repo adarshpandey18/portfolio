@@ -81,7 +81,7 @@ class _DesktopAboutPageState extends State<DesktopAboutPage> {
                                 children: [
                                   ElevatedButton.icon(
                                     onPressed: () => launchLink(
-                                        'https://drive.google.com/file/d/1mK_3AtPgi3o0hiqryqdE-txjOTcRQMk1/view?usp=sharing'),
+                                        'https://drive.google.com/file/d/15OTvKC5hzYjHZFcrxLY0SnwGCMIqxPjM/view?usp=sharing'),
                                     style: ElevatedButton.styleFrom(
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 30, vertical: 20),
@@ -145,17 +145,17 @@ class _DesktopAboutPageState extends State<DesktopAboutPage> {
                   ],
                 ),
               ),
-              Container(
-                width: double.infinity,
-                height: 700,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(12),
-                  child: Image.asset(
-                    'assets/images/about_img.jpg',
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
+              // Container(
+              //   width: double.infinity,
+              //   height: 700,
+              //   child: ClipRRect(
+              //     borderRadius: BorderRadius.circular(12),
+              //     child: Image.asset(
+              //       'assets/images/about_img.jpg',
+              //       fit: BoxFit.cover,
+              //     ),
+              //   ),
+              // ),
               const SizedBox(
                 height: 80,
               ),

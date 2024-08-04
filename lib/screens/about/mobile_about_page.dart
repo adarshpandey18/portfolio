@@ -112,16 +112,16 @@ class MobileAboutPage extends StatelessWidget {
               const SizedBox(
                 height: 30,
               ),
-              Container(
-                width: double.infinity,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(12),
-                  child: Image.asset(
-                    'assets/images/about_img.jpg',
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
+              // Container(
+              //   width: double.infinity,
+              //   child: ClipRRect(
+              //     borderRadius: BorderRadius.circular(12),
+              //     child: Image.asset(
+              //       'assets/images/about_img.jpg',
+              //       fit: BoxFit.cover,
+              //     ),
+              //   ),
+              // ),
               const SizedBox(
                 height: 60,
               ),
@@ -245,7 +245,7 @@ class MobileAboutPage extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () => launchLink(
-                        'https://drive.google.com/file/d/1mK_3AtPgi3o0hiqryqdE-txjOTcRQMk1/view?usp=sharing'),
+                        'https://drive.google.com/file/d/15OTvKC5hzYjHZFcrxLY0SnwGCMIqxPjM/view?usp=sharing'),
                     child: const Text(
                       "resume",
                       style: TextStyle(

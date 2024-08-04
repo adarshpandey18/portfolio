@@ -319,7 +319,7 @@ class _MobileHomePageState extends State<MobileHomePage> {
                   ),
                   GestureDetector(
                     onTap: () => launchLink(
-                        'https://drive.google.com/file/d/1mK_3AtPgi3o0hiqryqdE-txjOTcRQMk1/view?usp=sharing'),
+                        'https://drive.google.com/file/d/15OTvKC5hzYjHZFcrxLY0SnwGCMIqxPjM/view?usp=sharing'),
                     child: const Text(
                       "resume",
                       style: TextStyle(
