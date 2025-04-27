@@ -1,0 +1,135 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:icons_plus/icons_plus.dart';
+import 'package:portfolio/utils/colors/custom_colors.dart';
+import 'package:portfolio/utils/constants/image_path.dart';
+import 'package:portfolio/utils/constants/text_string.dart';
+import 'package:portfolio/widgets/profile_button.dart';
+
+import 'package:portfolio/widgets/profile_description.dart';
+import 'package:portfolio/widgets/status_widget.dart';
+
+class ProfileWidget extends StatefulWidget {
+  const ProfileWidget({super.key});
+
+  @override
+  State<ProfileWidget> createState() => _ProfileWidgetState();
+}
+
+class _ProfileWidgetState extends State<ProfileWidget> {
+  var isHoveringDownloadButton = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        color: CustomColors.cardColor,
+        border: Border.all(color: CustomColors.lightCardColor, width: 0.8),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          // header
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              // Image Part
+              ClipRRect(
+                borderRadius: BorderRadius.circular(14),
+                child: Image.asset(
+                  ImagePath.profilePath,
+                  width: 100,
+                  height: 100,
+                ),
+              ),
+              // Description Part
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  StatusWidget(),
+                  Text(
+                    TextString.name,
+                    style: Theme.of(context).textTheme.bodyMedium,
+                  ),
+                  RichText(
+                    text: TextSpan(
+                      text: TextString.profileDescriptionFirst,
+                      style: Theme.of(context).textTheme.labelLarge,
+                      spellOut: true,
+                      children: [
+                        TextSpan(
+                          text: TextString.profileDescriptionSecond,
+                          style: Theme.of(
+                            context,
+                          ).textTheme.labelLarge!.copyWith(
+                            color: CustomColors.accentColor,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              // Resume Part
+              Row(
+                children: [
+                  Text('Resume', style: Theme.of(context).textTheme.labelLarge),
+                  const SizedBox(width: 5),
+                  AnimatedContainer(
+                    duration: Duration(milliseconds: 300),
+                    curve: Curves.easeInOut,
+                    transform:
+                        isHoveringDownloadButton
+                            ? Matrix4.translationValues(0, -5, 0)
+                            : Matrix4.translationValues(0, 0, 0),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(14),
+                        color: CustomColors.extraLightCardColor,
+                      ),
+                      width: 45,
+                      height: 45,
+                      child: MouseRegion(
+                        onEnter:
+                            (event) => setState(() {
+                              isHoveringDownloadButton = true;
+                            }),
+                        onExit:
+                            (event) => setState(() {
+                              isHoveringDownloadButton = false;
+                            }),
+                        cursor: SystemMouseCursors.click,
+                        child: Icon(
+                          Icons.file_download_outlined,
+                          color: CustomColors.labelTextColor,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+          // Profile Description
+          ProfileDescription(),
+          // Profile Buttons
+          Row(
+            children: [
+              ProfileButton(title: 'Email', icon: Icons.email),
+              const SizedBox(width: 20),
+              ProfileButton(
+                title: 'WhatsApp',
+                icon: FontAwesome.whatsapp_brand,
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
