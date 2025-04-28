@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:portfolio/utils/colors/custom_colors.dart';
-import 'package:portfolio/utils/constants/image_path.dart';
 import 'package:portfolio/utils/constants/text_string.dart';
 import 'package:portfolio/utils/data/helper_data.dart';
-import 'package:portfolio/widgets/tech_stack_tile.dart';
 
 class WorkflowHighlights extends StatelessWidget {
   const WorkflowHighlights({super.key});
@@ -12,6 +10,7 @@ class WorkflowHighlights extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.all(8),
       decoration: BoxDecoration(
         border: Border.all(color: CustomColors.extraLightCardColor, width: 0.8),
         color: CustomColors.cardColor,
@@ -51,11 +50,11 @@ class WorkflowHighlights extends StatelessWidget {
                 final iconData = data[title];
                 final description = HelperData.workflowDataDescription[index];
                 return Padding(
-                  padding: const EdgeInsets.all(12.0),
+                  padding: const EdgeInsets.all(5.0),
 
                   child: Tooltip(
                     richMessage: TextSpan(
-                      text: title + '\n',
+                      text: '$title\n',
                       style: Theme.of(context).textTheme.bodySmall!.copyWith(
                         fontWeight: FontWeight.bold,
                       ),
@@ -77,7 +76,7 @@ class WorkflowHighlights extends StatelessWidget {
                     ),
                     child: Container(
                       width: double.infinity,
-                      padding: EdgeInsets.all(5),
+                      padding: EdgeInsets.all(8),
                       decoration: BoxDecoration(
                         border: Border.all(
                           color: CustomColors.extraLightCardColor,

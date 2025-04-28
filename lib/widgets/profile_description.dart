@@ -10,6 +10,7 @@ class ProfileDescription extends StatelessWidget {
     return Wrap(
       children: [
         Container(
+          width: double.infinity,
           padding: EdgeInsets.all(16),
           decoration: BoxDecoration(
             color: CustomColors.lightCardColor,

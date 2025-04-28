@@ -10,6 +10,5 @@ class CustomColors {
   static Color cardColor = Color.fromRGBO(16, 16, 16, 1);
   static Color lightCardColor = Color.fromRGBO(20, 20, 20, 1);
   static Color extraLightCardColor = Color.fromRGBO(40, 40, 40, 1);
+  static Color doubleExtraLightCardColor = Color.fromRGBO(140, 140, 140, 1);
 }
-
-

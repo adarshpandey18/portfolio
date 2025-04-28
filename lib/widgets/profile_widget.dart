@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:portfolio/utils/colors/custom_colors.dart';
@@ -115,15 +114,19 @@ class _ProfileWidgetState extends State<ProfileWidget> {
               ),
             ],
           ),
+          Text(
+            TextString.profileShortDescription,
+            style: Theme.of(context).textTheme.labelLarge,
+          ),
           // Profile Description
           ProfileDescription(),
           // Profile Buttons
           Row(
             children: [
-              ProfileButton(title: 'Email', icon: Icons.email),
+              ProfileButton(title: 'Email Me', icon: Icons.email),
               const SizedBox(width: 20),
               ProfileButton(
-                title: 'WhatsApp',
+                title: 'WhatsApp Me',
                 icon: FontAwesome.whatsapp_brand,
               ),
             ],

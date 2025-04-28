@@ -42,6 +42,7 @@ dependencies:
   gradient_txt: ^1.0.0
   icons_plus: ^5.0.0
   font_awesome_icon_class: ^0.0.6
+  carousel_slider: ^5.0.0
 
 dev_dependencies:
   flutter_test:

@@ -50,4 +50,22 @@ class HelperData {
     "Turn designs into a working app/site through code.",
   ];
   static bool isAvailable = true;
+  static List<Map<String, String>> testimonials = [
+    {
+      "name": "Chaitanya Amle",
+      "location": "Mumbai",
+      "date": "July 2024",
+      "testimonial":
+          "I had the pleasure of working with Adarsh Pandey during their internship at IDZ Digital Pvt. Ltd. They made significant contributions to our Flutter projects with their strong coding skills and eagerness to learn. Adarsh Pandey was proactive, reliable, and a great team player. I highly recommend them for any future opportunities in Software Development.",
+      "imgPath": "assets/images/profile.png",
+    },
+    {
+      "name": "Saurav Upadhyay",
+      "location": "Mumbai",
+      "date": "Jan 2024",
+      "testimonial":
+          "Adarsh Pandey worked very well, resolved various bugs, and added amazing features using his strong skillset. His contributions significantly improved the project quality.",
+      "imgPath": "assets/images/profile.png",
+    },
+  ];
 }

@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class TextString {
   TextString._();
 
@@ -7,6 +5,8 @@ class TextString {
   static String name = 'Adarsh Pandey';
   static String profileAvailable = 'Available to Work';
   static String profileNotAvailable = 'Not Available to World';
+  static String profileShortDescription =
+      "I'm a backend-focused software engineer in the making — passionate about clean architecture, system design, and building scalable apps. Currently diving deep into Spring, Go, and Flutter, and building full-stack projects with real-world impact. I’m obsessed with performance, structure, and pushing the limits of what I can build.";
   static String profileDescriptionFirst = 'I\'m a ';
   static String profileDescriptionSecond = 'Mechanic, I Build Things';
 
@@ -29,6 +29,10 @@ class TextString {
   static int clientCount = 23;
   static int yoeCount = 1;
 
+  // Testimonals
+  static String testimonialHeading = "Rave Reviews Showcase";
+  static String testimonialSubHeading = "Testimonials";
+
   // WorkFlow
   static String workflowSubHeading = 'Work Process';
   static String workflowHeaing = 'Workflow Highlights';
@@ -41,8 +45,8 @@ class TextString {
   static String onlinePresenceGithub = '@adarshpandey18';
 
   // Connect
-  static String connectHeading = 'let\'s work togeter';
-  static String connectSubHeading = 'Let\'s make magic happend together';
+  static String connectHeading = 'Let\'s work togeter';
+  static String connectSubHeading = 'Let\'s make magic happend together!';
   static String connectEmail = 'Email me';
   static String connectWhatsapp = 'WhatsApp';
 }
