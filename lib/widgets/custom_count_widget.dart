@@ -1,8 +1,6 @@
 import 'dart:async';
 
-import 'package:animated_flip_counter/animated_flip_counter.dart';
 import 'package:flutter/material.dart';
-import 'package:gradient_txt/gradient_text.dart';
 import 'package:portfolio/utils/colors/custom_colors.dart';
 import 'package:portfolio/widgets/custom_count_button_widget.dart';
 

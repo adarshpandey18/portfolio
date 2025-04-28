@@ -6,6 +6,7 @@ import 'package:portfolio/utils/constants/text_string.dart';
 import 'package:portfolio/widgets/profile_button.dart';
 
 import 'package:portfolio/widgets/profile_description.dart';
+import 'package:portfolio/widgets/resume_block.dart';
 import 'package:portfolio/widgets/status_widget.dart';
 
 class ProfileWidget extends StatefulWidget {
@@ -75,43 +76,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                 ],
               ),
               // Resume Part
-              Row(
-                children: [
-                  Text('Resume', style: Theme.of(context).textTheme.labelLarge),
-                  const SizedBox(width: 5),
-                  AnimatedContainer(
-                    duration: Duration(milliseconds: 300),
-                    curve: Curves.easeInOut,
-                    transform:
-                        isHoveringDownloadButton
-                            ? Matrix4.translationValues(0, -5, 0)
-                            : Matrix4.translationValues(0, 0, 0),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(14),
-                        color: CustomColors.extraLightCardColor,
-                      ),
-                      width: 45,
-                      height: 45,
-                      child: MouseRegion(
-                        onEnter:
-                            (event) => setState(() {
-                              isHoveringDownloadButton = true;
-                            }),
-                        onExit:
-                            (event) => setState(() {
-                              isHoveringDownloadButton = false;
-                            }),
-                        cursor: SystemMouseCursors.click,
-                        child: Icon(
-                          Icons.file_download_outlined,
-                          color: CustomColors.labelTextColor,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+              ResumeBlock(),
             ],
           ),
           Text(
@@ -123,10 +88,15 @@ class _ProfileWidgetState extends State<ProfileWidget> {
           // Profile Buttons
           Row(
             children: [
-              ProfileButton(title: 'Email Me', icon: Icons.email),
+              ProfileButton(
+                title: 'Email Me',
+                url: TextString.emailLink,
+                icon: Icons.email,
+              ),
               const SizedBox(width: 20),
               ProfileButton(
                 title: 'WhatsApp Me',
+                url: TextString.whatsAppLink,
                 icon: FontAwesome.whatsapp_brand,
               ),
             ],

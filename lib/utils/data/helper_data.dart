@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:portfolio/utils/constants/image_path.dart';
+import 'package:portfolio/utils/constants/text_string.dart';
 
 class HelperData {
   HelperData._();
@@ -57,7 +58,7 @@ class HelperData {
       "date": "July 2024",
       "testimonial":
           "I had the pleasure of working with Adarsh Pandey during their internship at IDZ Digital Pvt. Ltd. They made significant contributions to our Flutter projects with their strong coding skills and eagerness to learn. Adarsh Pandey was proactive, reliable, and a great team player. I highly recommend them for any future opportunities in Software Development.",
-      "imgPath": "assets/images/profile.png",
+      "imgPath": "assets/images/testimonial1.png",
     },
     {
       "name": "Saurav Upadhyay",
@@ -67,5 +68,18 @@ class HelperData {
           "Adarsh Pandey worked very well, resolved various bugs, and added amazing features using his strong skillset. His contributions significantly improved the project quality.",
       "imgPath": "assets/images/profile.png",
     },
+  ];
+  static List<Map<String, IconData>> servicesData = [
+    {"Mobile App Development": Bootstrap.phone},
+    {"Website Development": Bootstrap.laptop},
+    {"Linux Development": FontAwesome.linux_brand},
+  ];
+
+  static List<String> projectImages = [
+    "${ImagePath.basePath}news_app.png",
+    "${ImagePath.basePath}mahalaxmi-developers.png",
+    "${ImagePath.basePath}news_app.png",
+    "${ImagePath.basePath}mahalaxmi-developers.png",
+    "${ImagePath.basePath}news_app.png",
   ];
 }

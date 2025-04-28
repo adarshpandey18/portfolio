@@ -39,10 +39,23 @@ class ContactWidget extends StatelessWidget {
             style: Theme.of(context).textTheme.labelLarge,
           ),
           const SizedBox(height: 20),
-          ProfileButton(title: 'Email Me', icon: Icons.email),
+          ProfileButton(
+            title: 'Email Me',
+            url: TextString.emailLink,
+            icon: Icons.email,
+          ),
           const SizedBox(height: 20),
-
-          ProfileButton(title: 'Whatsapp Me', icon: FontAwesome.whatsapp_brand),
+          ProfileButton(
+            title: 'Whatsapp Me',
+            url: TextString.whatsAppLink,
+            icon: FontAwesome.whatsapp_brand,
+          ),
+          const SizedBox(height: 20),
+          ProfileButton(
+            title: 'Telegram Me',
+            url: TextString.telegramLink,
+            icon: FontAwesome.telegram_brand,
+          ),
         ],
       ),
     );

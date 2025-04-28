@@ -3,7 +3,6 @@ import 'package:icons_plus/icons_plus.dart';
 import 'package:portfolio/utils/colors/custom_colors.dart';
 import 'package:portfolio/utils/constants/text_string.dart';
 import 'package:portfolio/widgets/social_media_tile.dart';
-import 'package:portfolio/widgets/tech_stack_tile.dart';
 
 class SocialMediaWidget extends StatelessWidget {
   const SocialMediaWidget({super.key});
@@ -46,12 +45,30 @@ class SocialMediaWidget extends StatelessWidget {
               ),
             ],
           ),
-          SocialMediaTile(title: 'X / Twitter', iconData: Bootstrap.twitter_x),
+          SocialMediaTile(
+            title: 'X / Twitter',
+            iconData: Bootstrap.twitter_x,
+            url: TextString.xLink,
+            isClickable: true,
+          ),
           SocialMediaTile(
             title: 'LinkedIn',
             iconData: FontAwesome.linkedin_brand,
+            url: TextString.linkedinLink,
+            isClickable: true,
           ),
-          SocialMediaTile(title: 'GitHub', iconData: FontAwesome.github_brand),
+          SocialMediaTile(
+            title: 'GitHub',
+            iconData: FontAwesome.github_brand,
+            url: TextString.githubLink,
+            isClickable: true,
+          ),
+          SocialMediaTile(
+            title: 'Dev',
+            iconData: FontAwesome.dev_brand,
+            url: TextString.devLink,
+            isClickable: true,
+          ),
         ],
       ),
     );

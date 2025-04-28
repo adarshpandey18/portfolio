@@ -27,6 +27,16 @@ class StatusWidget extends StatelessWidget {
             height: 10,
             width: 10,
             decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color:
+                      HelperData.isAvailable
+                          ? Colors.lightGreen
+                          : Colors.redAccent,
+                  blurRadius: 5,
+                  spreadRadius: 0.5,
+                ),
+              ],
               borderRadius: BorderRadius.circular(100),
               color: HelperData.isAvailable ? Colors.green : Colors.red,
             ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/utils/colors/custom_colors.dart';
 import 'package:portfolio/utils/constants/image_path.dart';
+import 'package:portfolio/utils/helper_functions.dart';
 
 class TechStackTile extends StatefulWidget {
   final String title;
@@ -34,7 +35,15 @@ class _TechStackTileState extends State<TechStackTile> {
           }),
 
       child: GestureDetector(
-        onTap: () => isHovering ? {} : null,
+        onTap:
+            () =>
+                isHovering
+                    ? {
+                      HelperFunctions.launchCustomURL(
+                        url: widget.url ?? 'www.google.com',
+                      ),
+                    }
+                    : null,
         child: Stack(
           children: [
             Container(
