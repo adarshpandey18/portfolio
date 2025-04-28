@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:portfolio/utils/constants/image_path.dart';
-import 'package:portfolio/utils/constants/text_string.dart';
 
 class HelperData {
   HelperData._();
