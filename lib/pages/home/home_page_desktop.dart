@@ -9,6 +9,7 @@ import 'package:portfolio/widgets/services_widget.dart';
 import 'package:portfolio/widgets/social_media_widget.dart';
 import 'package:portfolio/widgets/tech_arsenal.dart';
 import 'package:portfolio/widgets/testimonials_widget.dart';
+import 'package:portfolio/widgets/unknown_widget.dart';
 import 'package:portfolio/widgets/workflow_highlights.dart';
 
 class HomePageDesktop extends StatelessWidget {
@@ -108,7 +109,7 @@ class HomePageDesktop extends StatelessWidget {
                   StaggeredGridTile.count(
                     crossAxisCellCount: 3,
                     mainAxisCellCount: 1.5,
-                    child: Container(color: Colors.pink),
+                    child: UnknownWidget(),
                   ),
                 ],
               ),

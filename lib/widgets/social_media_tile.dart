@@ -93,7 +93,7 @@ class _SocialMediaTileState extends State<SocialMediaTile> {
                   padding: const EdgeInsets.all(8.0),
                   child: Icon(
                     Icons.arrow_outward_rounded,
-                    color: CustomColors.labelTextColor,
+                    color: CustomColors.accentColor,
                   ),
                 ),
               ),

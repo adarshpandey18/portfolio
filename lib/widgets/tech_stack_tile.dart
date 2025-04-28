@@ -89,7 +89,7 @@ class _TechStackTileState extends State<TechStackTile> {
                   padding: const EdgeInsets.all(8.0),
                   child: Icon(
                     Icons.arrow_outward_outlined,
-                    color: CustomColors.labelTextColor,
+                    color: CustomColors.accentColor,
                   ),
                 ),
               ),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class CustomColors {
   CustomColors._();
-  static Color accentColor = Colors.lightBlue;
+  static Color accentColor = Colors.redAccent;
   static Color textColor = Colors.white;
   static Color labelTextColor = Color.fromRGBO(204, 204, 204, 1);
 

@@ -79,7 +79,7 @@ class _CustomCountWidgetState extends State<CustomCountWidget> {
               Text(
                 '+',
                 style: TextStyle(
-                  color: Colors.lightBlueAccent,
+                  color: CustomColors.accentColor,
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
                 ),
