@@ -10,7 +10,8 @@ import 'package:portfolio/widgets/resume_block.dart';
 import 'package:portfolio/widgets/status_widget.dart';
 
 class ProfileWidget extends StatefulWidget {
-  const ProfileWidget({super.key});
+  final bool showResume;
+  const ProfileWidget({super.key, required this.showResume});
 
   @override
   State<ProfileWidget> createState() => _ProfileWidgetState();
@@ -76,7 +77,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                 ],
               ),
               // Resume Part
-              ResumeBlock(),
+              if (widget.showResume) ResumeBlock(),
             ],
           ),
           Text(
@@ -88,16 +89,20 @@ class _ProfileWidgetState extends State<ProfileWidget> {
           // Profile Buttons
           Row(
             children: [
-              ProfileButton(
-                title: 'Email Me',
-                url: TextString.emailLink,
-                icon: Icons.email,
+              Expanded(
+                child: ProfileButton(
+                  title: 'Email Me',
+                  url: TextString.emailLink,
+                  icon: Icons.email,
+                ),
               ),
               const SizedBox(width: 20),
-              ProfileButton(
-                title: 'WhatsApp Me',
-                url: TextString.whatsAppLink,
-                icon: FontAwesome.whatsapp_brand,
+              Expanded(
+                child: ProfileButton(
+                  title: 'WhatsApp Me',
+                  url: TextString.whatsAppLink,
+                  icon: FontAwesome.whatsapp_brand,
+                ),
               ),
             ],
           ),

@@ -79,7 +79,7 @@ class HomePageDesktop extends StatelessWidget {
                   StaggeredGridTile.count(
                     crossAxisCellCount: 3,
                     mainAxisCellCount: 3,
-                    child: ProfileWidget(),
+                    child: ProfileWidget(showResume: true),
                   ),
 
                   StaggeredGridTile.count(

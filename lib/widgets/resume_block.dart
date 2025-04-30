@@ -16,6 +16,7 @@ class _ResumeBlockState extends State<ResumeBlock> {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text('Resume', style: Theme.of(context).textTheme.labelLarge),
         const SizedBox(width: 5),
@@ -50,7 +51,10 @@ class _ResumeBlockState extends State<ResumeBlock> {
                     ),
                 child: Icon(
                   Icons.file_download_outlined,
-                  color: CustomColors.labelTextColor,
+                  color:
+                      isHoveringDownloadButton
+                          ? CustomColors.accentColor
+                          : CustomColors.labelTextColor,
                 ),
               ),
             ),

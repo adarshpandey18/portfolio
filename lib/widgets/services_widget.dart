@@ -47,11 +47,81 @@ class ServicesWidget extends StatelessWidget {
             style: Theme.of(context).textTheme.titleLarge!.copyWith(),
             textAlign: TextAlign.center,
           ),
-          const SizedBox(height: 20),
           Stack(
             children: [
               SizedBox(
-                height: 90,
+                height: 50,
+                width: double.infinity,
+                child: CarouselSlider.builder(
+                  itemCount: HelperData.servicesData.length,
+                  itemBuilder: (context, index, realIndex) {
+                    final data = HelperData.servicesData[index];
+                    final title = data.keys.first;
+                    final iconData = data[title];
+                    return Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 10),
+                      child: SocialMediaTile(
+                        url: '',
+                        isClickable: false,
+                        title: title,
+                        iconData: iconData ?? Icons.error,
+                      ),
+                    );
+                  },
+                  options: CarouselOptions(
+                    animateToClosest: true,
+                    disableCenter: true,
+                    enlargeCenterPage: false,
+                    reverse: true,
+                    enableInfiniteScroll: true,
+                    autoPlay: true,
+                    autoPlayInterval: const Duration(seconds: 0),
+                  ),
+                ),
+              ),
+              Positioned(
+                top: 0,
+                left: 0,
+                right: 0,
+                height: 10,
+                child: Container(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.centerRight,
+                      end: Alignment.centerLeft,
+                      colors: [
+                        CustomColors.cardColor.withOpacity(0.9),
+                        CustomColors.cardColor.withOpacity(0),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
+                bottom: 0,
+                left: 0,
+                right: 0,
+                height: 10,
+                child: Container(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.centerRight,
+                      end: Alignment.centerLeft,
+                      colors: [
+                        CustomColors.cardColor.withOpacity(0.9),
+                        CustomColors.cardColor.withOpacity(0),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 10),
+          Stack(
+            children: [
+              SizedBox(
+                height: 50,
                 width: double.infinity,
                 child: CarouselSlider.builder(
                   itemCount: HelperData.servicesData.length,
@@ -74,8 +144,7 @@ class ServicesWidget extends StatelessWidget {
                     enlargeCenterPage: false,
                     enableInfiniteScroll: true,
                     autoPlay: true,
-                    autoPlayInterval: const Duration(seconds: 3),
-                    autoPlayCurve: Curves.linear,
+                    autoPlayInterval: const Duration(seconds: 0),
                   ),
                 ),
               ),
