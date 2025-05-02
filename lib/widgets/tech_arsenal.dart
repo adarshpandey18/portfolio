@@ -4,6 +4,7 @@ import 'package:portfolio/utils/colors/custom_colors.dart';
 import 'package:portfolio/utils/constants/text_string.dart';
 import 'package:portfolio/utils/data/helper_data.dart';
 import 'package:portfolio/widgets/tech_stack_tile.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 
 class TechArsenal extends StatelessWidget {
   const TechArsenal({super.key});
@@ -41,29 +42,31 @@ class TechArsenal extends StatelessWidget {
             TextString.techArsenalHeading,
             style: Theme.of(context).textTheme.bodySmall,
           ),
-          Spacer(),
-          SizedBox(
-            height: 200,
-            width: double.infinity,
-            child: GridView.builder(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                mainAxisSpacing: 10,
-                crossAxisSpacing: 10,
-                childAspectRatio: 3,
-                crossAxisCount: 2,
-              ),
-              itemCount: techStack.length,
-              itemBuilder: (context, index) {
-                final entry = techStack[index];
-                final techName = entry.key;
-                final techData = entry.value;
-                return TechStackTile(
-                  title: techName,
-                  url: techData["url"],
-                  iconData: techData['icon'],
-                );
-              },
-            ),
+          const SizedBox(height: 20),
+          ResponsiveBuilder(
+            builder: (context, sizingInformation) {
+              final isDesktop = sizingInformation.isDesktop;
+
+              return GridView.builder(
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                itemCount: techStack.length,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: isDesktop ? 2 : 1,
+                  childAspectRatio: isDesktop ? 2.5 : 4,
+                  mainAxisSpacing: 10,
+                  crossAxisSpacing: 10,
+                ),
+                itemBuilder: (context, index) {
+                  final entry = techStack[index];
+                  return TechStackTile(
+                    title: entry.key,
+                    url: entry.value['url'],
+                    iconData: entry.value['icon'],
+                  );
+                },
+              );
+            },
           ),
         ],
       ),

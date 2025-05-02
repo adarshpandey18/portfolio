@@ -49,74 +49,70 @@ class TestimonialsWidget extends StatelessWidget {
           Divider(color: CustomColors.extraLightCardColor),
           const SizedBox(height: 20),
           // Testimonials List
-          SizedBox(
-            height: 350,
-            child: Stack(
-              children: [
-                CarouselSlider.builder(
-                  itemCount: HelperData.testimonials.length,
-                  itemBuilder: (context, index, realIndex) {
-                    final data = HelperData.testimonials[index];
-                    return TestimonialCard(
-                      name: data['name'] ?? 'Name',
-                      location: data['location'] ?? 'Location',
-                      date: data['date'] ?? 'Date',
-                      imgPath: data['imgPath'] ?? 'assets/images/profile.png',
-                      testimonialText:
-                          data['testimonial'] ?? 'Testimonial Text',
-                    );
-                  },
-                  options: CarouselOptions(
-                    autoPlay: true,
-                    scrollDirection: Axis.vertical,
-                    height: double.infinity,
-                    animateToClosest: true,
-                    autoPlayCurve: Curves.ease,
-                    pageSnapping: true,
-                    enlargeStrategy: CenterPageEnlargeStrategy.zoom,
-                    enlargeCenterPage: true,
-                    disableCenter: true,
-                    aspectRatio: 1,
-                  ),
+          Stack(
+            children: [
+              CarouselSlider.builder(
+                itemCount: HelperData.testimonials.length,
+                itemBuilder: (context, index, realIndex) {
+                  final data = HelperData.testimonials[index];
+                  return TestimonialCard(
+                    name: data['name'] ?? 'Name',
+                    location: data['location'] ?? 'Location',
+                    date: data['date'] ?? 'Date',
+                    imgPath: data['imgPath'] ?? 'assets/images/profile.png',
+                    testimonialText: data['testimonial'] ?? 'Testimonial Text',
+                  );
+                },
+                options: CarouselOptions(
+                  autoPlay: true,
+                  scrollDirection: Axis.vertical,
+                  height: 300,
+                  animateToClosest: true,
+                  autoPlayCurve: Curves.ease,
+                  pageSnapping: true,
+                  enlargeStrategy: CenterPageEnlargeStrategy.zoom,
+                  enlargeCenterPage: true,
+                  disableCenter: true,
+                  aspectRatio: 1,
                 ),
-                Positioned(
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  height: 40,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                        colors: [
-                          CustomColors.cardColor.withOpacity(0.9),
-                          CustomColors.cardColor.withOpacity(0),
-                        ],
-                      ),
+              ),
+              Positioned(
+                top: 0,
+                left: 0,
+                right: 0,
+                height: 40,
+                child: Container(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        CustomColors.cardColor.withOpacity(0.9),
+                        CustomColors.cardColor.withOpacity(0),
+                      ],
                     ),
                   ),
                 ),
-                Positioned(
-                  bottom: 0,
-                  left: 0,
-                  right: 0,
-                  height: 30,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        begin: Alignment.bottomCenter,
-                        end: Alignment.topCenter,
-                        colors: [
-                          CustomColors.cardColor.withOpacity(0.9),
-                          CustomColors.cardColor.withOpacity(0),
-                        ],
-                      ),
+              ),
+              Positioned(
+                bottom: 0,
+                left: 0,
+                right: 0,
+                height: 30,
+                child: Container(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.bottomCenter,
+                      end: Alignment.topCenter,
+                      colors: [
+                        CustomColors.cardColor.withOpacity(0.9),
+                        CustomColors.cardColor.withOpacity(0),
+                      ],
                     ),
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ],
       ),

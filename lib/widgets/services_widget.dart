@@ -75,7 +75,6 @@ class ServicesWidget extends StatelessWidget {
                     reverse: true,
                     enableInfiniteScroll: true,
                     autoPlay: true,
-                    autoPlayInterval: const Duration(seconds: 0),
                   ),
                 ),
               ),
@@ -144,7 +143,7 @@ class ServicesWidget extends StatelessWidget {
                     enlargeCenterPage: false,
                     enableInfiniteScroll: true,
                     autoPlay: true,
-                    autoPlayInterval: const Duration(seconds: 0),
+                    
                   ),
                 ),
               ),

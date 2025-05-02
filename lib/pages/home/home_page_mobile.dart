@@ -29,10 +29,10 @@ class HomePageMobile extends StatelessWidget {
                 mainAxisSpacing: 12,
                 crossAxisSpacing: 12,
                 children: [
-                  StaggeredGridTile.count(
+                  StaggeredGridTile.fit(
                     crossAxisCellCount: 2,
-                    mainAxisCellCount: 3,
-                    child: ProfileWidget(showResume: false,),
+                    // mainAxisCellCount:   3,
+                    child: ProfileWidget(showResume: false),
                   ),
                   StaggeredGridTile.count(
                     crossAxisCellCount: 1,
@@ -83,39 +83,36 @@ class HomePageMobile extends StatelessWidget {
                       child: ResumeBlock(),
                     ),
                   ),
-                  StaggeredGridTile.count(
+                  StaggeredGridTile.fit(
                     crossAxisCellCount: 2,
-                    mainAxisCellCount: 2,
+                    // mainAxisCellCount: 2,
                     child: TechArsenal(),
                   ),
-                  StaggeredGridTile.count(
+                  StaggeredGridTile.fit(
                     crossAxisCellCount: 2,
-                    mainAxisCellCount: 2,
+                    // mainAxisCellCount: 2,
                     child: ProjectWidget(),
                   ),
-                  StaggeredGridTile.count(
+                  StaggeredGridTile.fit(
                     crossAxisCellCount: 2,
-                    mainAxisCellCount: 1.5,
                     child: ServicesWidget(),
                   ),
-                  StaggeredGridTile.count(
+                  StaggeredGridTile.fit(
                     crossAxisCellCount: 3,
-                    mainAxisCellCount: 3,
+                    // mainAxisCellCount: 3,
                     child: TestimonialsWidget(),
                   ),
-                  StaggeredGridTile.count(
+                  StaggeredGridTile.fit(
                     crossAxisCellCount: 2,
-                    mainAxisCellCount: 3,
+                    // mainAxisCellCount: 2.2,
                     child: WorkflowHighlights(),
                   ),
-                  StaggeredGridTile.count(
+                  StaggeredGridTile.fit(
                     crossAxisCellCount: 2,
-                    mainAxisCellCount: 2,
                     child: SocialMediaWidget(),
                   ),
-                  StaggeredGridTile.count(
+                  StaggeredGridTile.fit(
                     crossAxisCellCount: 2,
-                    mainAxisCellCount: 2,
                     child: ContactWidget(),
                   ),
                 ],

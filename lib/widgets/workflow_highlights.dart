@@ -40,81 +40,81 @@ class WorkflowHighlights extends StatelessWidget {
             TextString.workflowHeaing,
             style: Theme.of(context).textTheme.bodySmall,
           ),
-          const SizedBox(height: 32),
-          Expanded(
-            child: ListView.builder(
-              itemCount: HelperData.workflowData.length,
-              itemBuilder: (context, index) {
-                final data = HelperData.workflowData[index];
-                final title = data.keys.first;
-                final iconData = data[title];
-                final description = HelperData.workflowDataDescription[index];
-                return Padding(
-                  padding: const EdgeInsets.all(5.0),
+          const SizedBox(height: 22),
+          ListView.builder(
+            physics: NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            itemCount: HelperData.workflowData.length,
+            itemBuilder: (context, index) {
+              final data = HelperData.workflowData[index];
+              final title = data.keys.first;
+              final iconData = data[title];
+              final description = HelperData.workflowDataDescription[index];
+              return Padding(
+                padding: const EdgeInsets.all(5.0),
 
-                  child: Tooltip(
-                    richMessage: TextSpan(
-                      text: '$title\n',
-                      style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                        fontWeight: FontWeight.bold,
-                      ),
-                      children: [
-                        TextSpan(
-                          text: description,
-                          style: Theme.of(context).textTheme.labelLarge,
-                        ),
-                      ],
+                child: Tooltip(
+                  richMessage: TextSpan(
+                    text: '$title\n',
+                    style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                      fontWeight: FontWeight.bold,
                     ),
-                    padding: EdgeInsets.all(12),
+                    children: [
+                      TextSpan(
+                        text: description,
+                        style: Theme.of(context).textTheme.labelLarge,
+                      ),
+                    ],
+                  ),
+                  padding: EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    color: CustomColors.cardColor,
+                    border: Border.all(
+                      color: CustomColors.extraLightCardColor,
+                      width: 0.8,
+                    ),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Container(
+                    width: double.infinity,
+                    padding: EdgeInsets.all(8),
                     decoration: BoxDecoration(
-                      color: CustomColors.cardColor,
                       border: Border.all(
                         color: CustomColors.extraLightCardColor,
                         width: 0.8,
                       ),
-                      borderRadius: BorderRadius.circular(10),
+                      color: CustomColors.lightCardColor,
+                      borderRadius: BorderRadius.circular(14),
                     ),
-                    child: Container(
-                      width: double.infinity,
-                      padding: EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: CustomColors.extraLightCardColor,
-                          width: 0.8,
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Container(
+                          padding: EdgeInsets.all(8),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: CustomColors.extraLightCardColor,
+                          ),
+                          child: Icon(
+                            iconData,
+                            size: 20,
+                            color: CustomColors.labelTextColor,
+                          ),
                         ),
-                        color: CustomColors.lightCardColor,
-                        borderRadius: BorderRadius.circular(14),
-                      ),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Container(
-                            padding: EdgeInsets.all(8),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: CustomColors.extraLightCardColor,
-                            ),
-                            child: Icon(
-                              iconData,
-                              size: 20,
-                              color: CustomColors.labelTextColor,
-                            ),
-                          ),
-                          const SizedBox(width: 8),
-                          Text(
-                            title,
-                            style: Theme.of(context).textTheme.bodySmall!
-                                .copyWith(color: CustomColors.labelTextColor),
-                          ),
-                        ],
-                      ),
+                        const SizedBox(width: 8),
+                        Text(
+                          title,
+                          style: Theme.of(context).textTheme.bodySmall!
+                              .copyWith(color: CustomColors.labelTextColor),
+                        ),
+                      ],
                     ),
                   ),
-                );
-              },
-            ),
+                ),
+              );
+            },
           ),
         ],
       ),

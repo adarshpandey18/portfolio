@@ -69,9 +69,8 @@ class HelperData {
     },
   ];
   static List<Map<String, IconData>> servicesData = [
-    {"Mobile App Development": Bootstrap.phone},
-    {"Website Development": Bootstrap.laptop},
-    {"Linux Development": FontAwesome.linux_brand},
+    {"Mobile App": Bootstrap.phone},
+    {"Website": Bootstrap.laptop},
   ];
 
   static List<String> projectImages = [

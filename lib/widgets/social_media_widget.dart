@@ -3,6 +3,7 @@ import 'package:icons_plus/icons_plus.dart';
 import 'package:portfolio/utils/colors/custom_colors.dart';
 import 'package:portfolio/utils/constants/text_string.dart';
 import 'package:portfolio/widgets/social_media_tile.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 
 class SocialMediaWidget extends StatelessWidget {
   const SocialMediaWidget({super.key});
@@ -45,11 +46,27 @@ class SocialMediaWidget extends StatelessWidget {
               ),
             ],
           ),
+          ResponsiveBuilder(
+            builder:
+                (context, sizingInformation) =>
+                    sizingInformation.deviceScreenType ==
+                            DeviceScreenType.mobile
+                        ? const SizedBox(height: 20)
+                        : SizedBox(),
+          ),
           SocialMediaTile(
             title: 'X / Twitter',
             iconData: Bootstrap.twitter_x,
             url: TextString.xLink,
             isClickable: true,
+          ),
+          ResponsiveBuilder(
+            builder:
+                (context, sizingInformation) =>
+                    sizingInformation.deviceScreenType ==
+                            DeviceScreenType.mobile
+                        ? const SizedBox(height: 10)
+                        : SizedBox(),
           ),
           SocialMediaTile(
             title: 'LinkedIn',
@@ -57,12 +74,30 @@ class SocialMediaWidget extends StatelessWidget {
             url: TextString.linkedinLink,
             isClickable: true,
           ),
+
+          ResponsiveBuilder(
+            builder:
+                (context, sizingInformation) =>
+                    sizingInformation.deviceScreenType ==
+                            DeviceScreenType.mobile
+                        ? const SizedBox(height: 10)
+                        : SizedBox(),
+          ),
           SocialMediaTile(
             title: 'GitHub',
             iconData: FontAwesome.github_brand,
             url: TextString.githubLink,
             isClickable: true,
           ),
+          ResponsiveBuilder(
+            builder:
+                (context, sizingInformation) =>
+                    sizingInformation.deviceScreenType ==
+                            DeviceScreenType.mobile
+                        ? const SizedBox(height: 10)
+                        : SizedBox(),
+          ),
+
           SocialMediaTile(
             title: 'Dev',
             iconData: FontAwesome.dev_brand,

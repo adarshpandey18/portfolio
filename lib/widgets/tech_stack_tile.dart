@@ -75,6 +75,7 @@ class _TechStackTileState extends State<TechStackTile> {
                   const SizedBox(width: 8),
                   Text(
                     widget.title,
+                    overflow: TextOverflow.ellipsis,
                     style: Theme.of(context).textTheme.bodySmall!.copyWith(
                       color: CustomColors.labelTextColor,
                     ),

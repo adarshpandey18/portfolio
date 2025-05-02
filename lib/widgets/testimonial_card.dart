@@ -75,7 +75,11 @@ class TestimonialCard extends StatelessWidget {
             ),
             Divider(),
             Text(
+              softWrap: true,
+
               testimonialText,
+              maxLines: 5,
+              overflow: TextOverflow.ellipsis,
               style: Theme.of(context).textTheme.labelLarge,
             ),
           ],
