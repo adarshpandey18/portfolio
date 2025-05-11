@@ -19,7 +19,9 @@ class _ResumeBlockState extends State<ResumeBlock> {
     return ResponsiveBuilder(
       builder:
           (context, sizingInformation) =>
-              sizingInformation.deviceScreenType == DeviceScreenType.desktop
+              sizingInformation.deviceScreenType == DeviceScreenType.desktop ||
+                      sizingInformation.deviceScreenType ==
+                          DeviceScreenType.tablet
                   ? Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

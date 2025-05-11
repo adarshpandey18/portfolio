@@ -76,7 +76,6 @@ class ProjectWidget extends StatelessWidget {
                     enlargeStrategy: CenterPageEnlargeStrategy.height,
                     enableInfiniteScroll: true,
                     autoPlay: true,
-                    autoPlayInterval: const Duration(seconds: 3),
                     autoPlayCurve: Curves.easeInOut,
                   ),
                 ),

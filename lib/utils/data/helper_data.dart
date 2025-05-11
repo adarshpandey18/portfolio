@@ -26,7 +26,7 @@ class HelperData {
     {"English & Hindi": Bootstrap.globe},
     {"MCA": FontAwesome.graduation_cap_solid},
     {"IST": Bootstrap.clock},
-    {"TIMSCDR": Bootstrap.book},
+    // {"TIMSCDR": Bootstrap.book},
     {"Kung-Fu Panda Fan": FontAwesome.film_solid},
   ];
 
@@ -65,7 +65,7 @@ class HelperData {
       "date": "Jan 2024",
       "testimonial":
           "Adarsh Pandey worked very well, resolved various bugs, and added amazing features using his strong skillset. His contributions significantly improved the project quality.",
-      "imgPath": "assets/images/profile.png",
+      "imgPath": "assets/images/testimonial2.png",
     },
   ];
   static List<Map<String, IconData>> servicesData = [

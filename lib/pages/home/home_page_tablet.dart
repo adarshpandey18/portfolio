@@ -6,10 +6,8 @@ import 'package:portfolio/widgets/custom_count_widget.dart';
 import 'package:portfolio/widgets/profile_widget.dart';
 import 'package:portfolio/widgets/project_widget.dart';
 import 'package:portfolio/widgets/services_widget.dart';
-import 'package:portfolio/widgets/social_media_tile.dart';
 import 'package:portfolio/widgets/social_media_widget.dart';
 import 'package:portfolio/widgets/tech_arsenal.dart';
-import 'package:portfolio/widgets/testimonial_card.dart';
 import 'package:portfolio/widgets/testimonials_widget.dart';
 import 'package:portfolio/widgets/unknown_widget.dart';
 import 'package:portfolio/widgets/workflow_highlights.dart';
@@ -30,9 +28,8 @@ class HomePageTablet extends StatelessWidget {
                 crossAxisSpacing: 12,
                 mainAxisSpacing: 12,
                 children: [
-                  StaggeredGridTile.count(
+                  StaggeredGridTile.fit(
                     crossAxisCellCount: 2,
-                    mainAxisCellCount: 2,
                     child: TechArsenal(),
                   ),
                   StaggeredGridTile.count(
@@ -46,8 +43,8 @@ class HomePageTablet extends StatelessWidget {
                   ),
 
                   StaggeredGridTile.count(
-                    crossAxisCellCount: 1,
                     mainAxisCellCount: 1,
+                    crossAxisCellCount: 1,
                     child: CustomCountWidget(
                       title: 'Client trust',
                       iconData: Icons.emoji_emotions,
@@ -56,8 +53,8 @@ class HomePageTablet extends StatelessWidget {
                   ),
 
                   StaggeredGridTile.count(
-                    crossAxisCellCount: 1,
                     mainAxisCellCount: 1,
+                    crossAxisCellCount: 1,
                     child: CustomCountWidget(
                       title: 'Years Exp.  ',
                       iconData: Icons.star_rounded,
@@ -65,44 +62,34 @@ class HomePageTablet extends StatelessWidget {
                     ),
                   ),
 
-                  StaggeredGridTile.count(
+                  StaggeredGridTile.fit(
                     crossAxisCellCount: 3,
-                    mainAxisCellCount: 3,
-                    child: ProfileWidget(showResume: true,),
+                    child: ProfileWidget(showResume: true),
                   ),
-                  StaggeredGridTile.count(
+                  StaggeredGridTile.fit(
                     crossAxisCellCount: 2,
-                    mainAxisCellCount: 2,
                     child: ProjectWidget(),
                   ),
-                  StaggeredGridTile.count(
-                    crossAxisCellCount: 2,
-                    mainAxisCellCount: 1.5,
+                  StaggeredGridTile.fit(
+                    crossAxisCellCount: 5,
                     child: ServicesWidget(),
                   ),
-                  StaggeredGridTile.count(
+                  StaggeredGridTile.fit(
                     crossAxisCellCount: 3,
-                    mainAxisCellCount: 1.5,
-                    child: UnknownWidget(),
-                  ),
-                  StaggeredGridTile.count(
-                    crossAxisCellCount: 3,
-                    mainAxisCellCount: 3,
                     child: TestimonialsWidget(),
                   ),
-                  StaggeredGridTile.count(
+                  StaggeredGridTile.fit(
                     crossAxisCellCount: 2,
-                    mainAxisCellCount: 3,
                     child: WorkflowHighlights(),
                   ),
                   StaggeredGridTile.count(
+                    mainAxisCellCount: 3,
                     crossAxisCellCount: 2,
-                    mainAxisCellCount: 2,
                     child: SocialMediaWidget(),
                   ),
                   StaggeredGridTile.count(
+                    mainAxisCellCount: 3,
                     crossAxisCellCount: 3,
-                    mainAxisCellCount: 2,
                     child: ContactWidget(),
                   ),
                 ],
